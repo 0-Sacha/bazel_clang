@@ -1,0 +1,6 @@
+bazel-bin
+bazel-examples
+bazel-Examples
+bazel-bazel_llvm_clang
+bazel-out
+bazel-testlogs
