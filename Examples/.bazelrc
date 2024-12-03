@@ -1,0 +1,4 @@
+
+common --incompatible_strict_action_env
+
+common:llvm_clang --extra_toolchains=@myclang//:toolchain
