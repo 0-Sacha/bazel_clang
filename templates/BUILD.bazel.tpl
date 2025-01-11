@@ -164,7 +164,7 @@ filegroup(
         "include/c++/v1/**",
         "include/x86_64-unknown-linux-gnu/c++/v1/**",
         # "include/**"
-    ]),
+    ], allow_empty = True),
 )
 
 filegroup(
@@ -172,14 +172,14 @@ filegroup(
     srcs = glob([
         "lib/x86_64-unknown-linux-gnu/**",
         # "lib/**",
-    ]),
+    ], allow_empty = True),
 )
 
 filegroup(
     name = "toolchain_bins",
     srcs = glob([
         "bin/*",
-    ]),
+    ]), allow_empty = True,
 )
 
 
