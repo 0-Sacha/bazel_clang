@@ -1,6 +1,7 @@
-#include <cstdio>
+#include <iostream>
+#include <format>
 
 int main() {
-    printf("Hello World !");
+    std::cout << std::format("{} {}!", "Hello", "world") << std::endl;
     return 0;
 }

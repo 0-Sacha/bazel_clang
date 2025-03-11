@@ -46,9 +46,6 @@ cc_toolchain_config(
     toolchain_builtin_includedirs = [
         "%{compiler_package_path}include/c++/v1",
         "%{compiler_package_path}include/x86_64-unknown-linux-gnu/c++/v1",
-
-        # for use of the features.h file
-        "/usr/include",
     ],
 
     copts = %{copts}, # [ "--no-standard-includes" ]
@@ -58,7 +55,6 @@ cc_toolchain_config(
     defines = %{defines},
     includedirs = %{includedirs},
     linkdirs = [
-        "/usr/lib",
         "%{compiler_package_path}lib/x86_64-unknown-linux-gnu",
     ] + %{linkdirs},
 
@@ -80,10 +76,6 @@ cc_toolchain(
     strip_files = ":toolchain_every_files",
     dwp_files = ":toolchain_every_files",
     coverage_files = ":toolchain_every_files",
-
-    # dynamic_runtime_lib
-    # static_runtime_lib
-    # supports_param_files
 )
 
 toolchain(
@@ -157,29 +149,29 @@ filegroup(
     srcs = ["bin/lldb"],
 )
 
+# We cannot match to %{compiler_package_path} so we need to use allow_empty = True
 
 filegroup(
     name = "toolchain_includes",
     srcs = glob([
-        "include/c++/v1/**",
-        "include/x86_64-unknown-linux-gnu/c++/v1/**",
-        # "include/**"
-    ]),
+        "include/c++/v1/*",
+        "include/c++/v1/**/*",
+        "include/x86_64-unknown-linux-gnu/c++/v1/*",
+    ], allow_empty = True),
 )
 
 filegroup(
     name = "toolchain_libs",
     srcs = glob([
-        "lib/x86_64-unknown-linux-gnu/**",
-        # "lib/**",
-    ]),
+        "lib/x86_64-unknown-linux-gnu/*",
+    ], allow_empty = True),
 )
 
 filegroup(
     name = "toolchain_bins",
     srcs = glob([
         "bin/*",
-    ]),
+    ], allow_empty = True),
 )
 
 

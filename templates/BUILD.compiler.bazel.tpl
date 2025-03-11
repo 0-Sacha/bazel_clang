@@ -73,16 +73,16 @@ filegroup(
 filegroup(
     name = "toolchain_includes",
     srcs = glob([
-        "include/c++/v1/**"
-        # "include/**"
+        "include/c++/v1/*",
+        "include/c++/v1/**/*",
+        "include/x86_64-unknown-linux-gnu/c++/v1/*",
     ]),
 )
 
 filegroup(
     name = "toolchain_libs",
     srcs = glob([
-        "lib/x86_64-unknown-linux-gnu/**"
-        # "lib/**",
+        "lib/x86_64-unknown-linux-gnu/*",
     ]),
 )
 

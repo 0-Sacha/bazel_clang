@@ -19,6 +19,8 @@ bazel_dep(name = "bazel_llvm_clang", version = "0.0.1", dev_dependency = True)
 
 llvm_clang_toolchain_extension = use_extension("@bazel_llvm_clang//:rules.bzl", "llvm_clang_toolchain_extension", dev_dependency = True)
 inject_repo(llvm_clang_toolchain_extension, "platforms", "bazel_utilities")
-llvm_clang_toolchain_extension.llvm_clang_toolchain(name = "myclang")
+llvm_clang_toolchain_extension.llvm_clang_toolchain(
+    name = "myclang",
+)
 use_repo(llvm_clang_toolchain_extension, "myclang")
 # register_toolchains("@myclang//:toolchain")
