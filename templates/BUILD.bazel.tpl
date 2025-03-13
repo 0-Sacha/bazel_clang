@@ -57,11 +57,7 @@ cc_toolchain_config(
     linkopts = [ "-stdlib=%{stdlib}" ] + %{linkopts},
     defines = %{defines},
     includedirs = %{includedirs},
-    linkdirs = [
-        "/usr/lib",
-        "%{compiler_package_path}lib/x86_64-unknown-linux-gnu",
-    ] + %{linkdirs},
-
+    linkdirs = %{linkdirs},
     linklibs = %{linklibs},
 )
 
@@ -179,7 +175,7 @@ filegroup(
     name = "toolchain_bins",
     srcs = glob([
         "bin/*",
-    ]), allow_empty = True,
+    ], allow_empty = True),
 )
 
 

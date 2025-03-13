@@ -21,4 +21,4 @@ jobs:
         key: bazel
     - name: Build HelloWorld...
       run: bazelisk build --config=llvm_clang //HelloWorld:HelloWorld
-      working-directory: Examples
+      working-directory: examples
