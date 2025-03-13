@@ -175,7 +175,7 @@ filegroup(
     name = "toolchain_bins",
     srcs = glob([
         "bin/*",
-    ]), allow_empty = True,
+    ], allow_empty = True),
 )
 
 
