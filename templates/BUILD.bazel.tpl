@@ -49,7 +49,10 @@ cc_toolchain_config(
 
         # for use of the features.h file
         "/usr/include",
-    ],
+    ] + %{toolchain_builtin_includedirs_isystem},
+    
+    toolchain_builtin_includedirs = [
+    ] + %{toolchain_builtin_includedirs},
 
     copts = %{copts}, # [ "--no-standard-includes" ]
     conlyopts = %{conlyopts},
