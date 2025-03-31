@@ -43,13 +43,16 @@ cc_toolchain_config(
         "%{compiler_package}:dbg": "dbg",
     },
     
+    toolchain_builtin_includedirs_isystem = [
+    ] + %{toolchain_builtin_includedirs_isystem},
+
     toolchain_builtin_includedirs = [
         "%{compiler_package_path}include/c++/v1",
         "%{compiler_package_path}include/x86_64-unknown-linux-gnu/c++/v1",
 
         # for use of the features.h file
         "/usr/include",
-    ],
+    ] + %{toolchain_builtin_includedirs},
 
     copts = %{copts}, # [ "--no-standard-includes" ]
     conlyopts = %{conlyopts},
