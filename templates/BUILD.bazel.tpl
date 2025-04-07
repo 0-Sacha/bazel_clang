@@ -1,6 +1,6 @@
 ""
 
-load("@bazel_utilities//toolchains:cc_toolchain_config.bzl", "cc_toolchain_config")
+load("@bazel_utilities//toolchains:cc_toolchain_config.bzl", "cc_toolchain_config_bins")
 
 package(default_visibility = ["//visibility:public"])
 
